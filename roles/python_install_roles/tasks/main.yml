@@ -1,0 +1,12 @@
+---
+# tasks file for python_install_roles
+- name: Install all required dependencies
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "epel-release"
+    - "python-setuptools"
+    - "python"
+    - "python-devel"
+    - "python-pip"

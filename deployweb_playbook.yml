@@ -1,0 +1,15 @@
+# This playbook requires privilege escalation to be set. Please
+# refer the ansible.cfg in current working directory for privilege_escalation
+# configuration.
+
+- name: Deploy a web application
+  hosts: db_and_web_server
+  serial: 1
+  vars:
+      db_name: employee_db
+      db_user: Makok
+      db_password: Makok123!
+  roles:
+      - python_install_roles
+      - mysql_db_roles
+      - flask_web_roles
